@@ -18,15 +18,15 @@ function InputScreen({navigation}) {
     const scrollRef = useRef();
     const dispatch = useDispatch();
 
-    const [type, setType] = useState('REDF');
-    const [personalFinancingInstallmentAmount, setPersonalFinancingInstallmentAmount] = useState('1000');
-    const [personalFinancingInstallmentMonths, setPersonalFinancingInstallmentMonths] = useState('60');
-    const [personalLoanQuestion, setPersonalLoanQuestion] = useState('YES');
-    const [salary, setSalary] = useState('10000');
+    const [type, setType] = useState(null);
+    const [personalFinancingInstallmentAmount, setPersonalFinancingInstallmentAmount] = useState(null);
+    const [personalFinancingInstallmentMonths, setPersonalFinancingInstallmentMonths] = useState(null);
+    const [personalLoanQuestion, setPersonalLoanQuestion] = useState(null);
+    const [salary, setSalary] = useState(null);
     const [birthdate, setBirthdate] = useState(new Date());
-    const [job, setJob] = useState('CIVILIAN');
-    const [militaryRank, setMilitaryRank] = useState('MILITARY_PRIVATE');
-    const [monthlyObligations, setMonthlyObligations] = useState('0');
+    const [job, setJob] = useState(null);
+    const [militaryRank, setMilitaryRank] = useState(null);
+    const [monthlyObligations, setMonthlyObligations] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = () => {
@@ -170,7 +170,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: '#aaa',
         padding: 10,
-        backgroundColor: '#fdfdfd'
+        backgroundColor: '#fdfdfd',
+        color: '#333'
     },
     errorMessage: {
         padding: 10,
