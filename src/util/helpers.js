@@ -12,6 +12,6 @@ export const trans = (text) => {
     return text;
 };
 
-export const validateNumber = number => !/^[0-9]$/.test(number);
+export const validateNumber = number => /^\d+$/.test(number);
 
 export const validateDate = date => new Date(date).toString() !== 'Invalid Date';

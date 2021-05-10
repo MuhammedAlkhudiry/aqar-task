@@ -41,11 +41,15 @@ export function fetchLoan(input) {
 }`,
             }),
         });
+
         const responseJson = await response.json();
 
         return dispatch({
             type: FETCH_LOAN,
-            payload: responseJson.data.HomeFinancing.AlahliCalculator
+            payload: {
+                data: responseJson.data?.HomeFinancing?.AlahliCalculator,
+                errors: responseJson.errors ?? [],
+            }
         });
     };
 }

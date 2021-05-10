@@ -18,15 +18,15 @@ function InputScreen({navigation}) {
     const scrollRef = useRef();
     const dispatch = useDispatch();
 
-    const [type, setType] = useState(null);
-    const [personalFinancingInstallmentAmount, setPersonalFinancingInstallmentAmount] = useState(null);
-    const [personalFinancingInstallmentMonths, setPersonalFinancingInstallmentMonths] = useState(null);
-    const [personalLoanQuestion, setPersonalLoanQuestion] = useState(null);
-    const [salary, setSalary] = useState(null);
+    const [type, setType] = useState('REDF');
+    const [personalFinancingInstallmentAmount, setPersonalFinancingInstallmentAmount] = useState('1000');
+    const [personalFinancingInstallmentMonths, setPersonalFinancingInstallmentMonths] = useState('60');
+    const [personalLoanQuestion, setPersonalLoanQuestion] = useState('YES');
+    const [salary, setSalary] = useState('10000');
     const [birthdate, setBirthdate] = useState(new Date());
-    const [job, setJob] = useState(null);
-    const [militaryRank, setMilitaryRank] = useState(null);
-    const [monthlyObligations, setMonthlyObligations] = useState(null);
+    const [job, setJob] = useState('CIVILIAN');
+    const [militaryRank, setMilitaryRank] = useState('MILITARY_PRIVATE');
+    const [monthlyObligations, setMonthlyObligations] = useState('0');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = () => {
@@ -104,11 +104,12 @@ function InputScreen({navigation}) {
             <View>
                 <LocalizedText style={styles.title} text="alahli_calc_title"/>
                 {errorMessage !== '' &&
-                <View style={styles.errorMessage}>
-                    <Text style={{color: 'white', textAlign: 'right'}}>
-                        {errorMessage}
-                    </Text>
-                </View>}
+                    <View style={styles.errorMessage}>
+                        <Text style={{color: 'white', textAlign: 'right'}}>
+                            {errorMessage}
+                        </Text>
+                    </View>
+                }
 
                 <LocalizedText text="alahli_calc_redf_qualified"/>
                 <RadioButtons itemsProp={TYPES} value={type} setValue={setType}/>
