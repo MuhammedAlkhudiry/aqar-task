@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "android-prod": "cd android && gradlew assembleRelease",
+    "android-debug": "cd android && gradlew assembleDebug",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
